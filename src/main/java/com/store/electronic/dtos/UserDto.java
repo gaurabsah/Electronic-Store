@@ -2,8 +2,8 @@ package com.store.electronic.dtos;
 
 import lombok.*;
 
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 @Getter
@@ -20,8 +20,8 @@ public class UserDto {
     @NotBlank(message = "Name is required")
     private String name;
 
-//    @Email(message = "Invalid Email")
-    @Pattern(regexp = "^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\\\.[A-Z]{2,6}$",message = "Invalid Email")
+    @Email(message = "Invalid Email")
+//    @Pattern(regexp = "^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\\\.[A-Z]{2,6}$",message = "Invalid Email")
     @NotBlank(message = "Email is required")
     private String email;
 
