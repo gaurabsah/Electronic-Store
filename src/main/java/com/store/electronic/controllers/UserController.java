@@ -1,13 +1,18 @@
 package com.store.electronic.controllers;
 
 import com.store.electronic.dtos.UserDto;
+import com.store.electronic.services.FileService;
 import com.store.electronic.services.UserService;
+import com.store.electronic.utils.ImageResponse;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.Valid;
+import java.io.IOException;
 import java.util.List;
 
 @RestController
@@ -16,6 +21,13 @@ public class UserController {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private FileService fileService;
+
+    @Value("${user.profile.image.path}")
+    private String imageUploadPath;
+
 
     @PostMapping("/createUser")
     public ResponseEntity<UserDto> saveUser(@Valid @RequestBody UserDto userDto) {
@@ -62,5 +74,24 @@ public class UserController {
     public ResponseEntity<List<UserDto>> searchUser(@PathVariable String keyword) {
         List<UserDto> userDtos = userService.searchUser(keyword);
         return new ResponseEntity<>(userDtos, HttpStatus.OK);
+    }
+
+    //    upload user image/profile picture
+    @PostMapping("/uploadUserImage/{userId}")
+    public ResponseEntity<ImageResponse> uploadUserImage(@RequestParam("userImage") MultipartFile image, @PathVariable String userId) throws IOException {
+        String imageName = fileService.uploadFile(image, imageUploadPath);
+
+        UserDto user = userService.getUserById(userId);
+        user.setImageName(imageName);
+        UserDto userDto = userService.updateUser(user, userId);
+
+        ImageResponse imageResponse = ImageResponse.builder()
+                .imageName(imageName)
+                .success(true)
+                .status(HttpStatus.CREATED)
+                .message("Image uploaded successfully!!!")
+                .build();
+
+        return new ResponseEntity<>(imageResponse, HttpStatus.CREATED);
     }
 }
