@@ -14,5 +14,5 @@ public interface CategoryService {
 
     CategoryDto updateCategory(CategoryDto categoryDto, String categoryId);
 
-    List<CategoryDto> getAllCategories();
+    List<CategoryDto> getAllCategories(int pageNumber, int pageSize, String sortBy, String sortOrder);
 }

@@ -8,6 +8,10 @@ import org.modelmapper.ModelMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -75,8 +79,11 @@ public class CategoryServiceImpl implements CategoryService {
     }
 
     @Override
-    public List<CategoryDto> getAllCategories() {
-        List<Category> categories = categoryRepository.findAll();
+    public List<CategoryDto> getAllCategories(int pageNumber, int pageSize, String sortBy, String sortOrder) {
+        Sort sort = (sortOrder.equalsIgnoreCase("desc")) ? (Sort.by(sortBy).descending()) : (Sort.by(sortBy).ascending());
+        Pageable pageable = PageRequest.of(pageNumber, pageSize, sort);
+        Page<Category> page = categoryRepository.findAll(pageable);
+        List<Category> categories = page.getContent();
         List<CategoryDto> categoryDtos = categories.stream().map(category -> entityToDto(category)).collect(Collectors.toList());
         logger.info("Categories found: {}", categoryDtos);
         return categoryDtos;

@@ -49,8 +49,13 @@ public class CategoryController {
     }
 
     @GetMapping("/getAll")
-    public ResponseEntity<List<CategoryDto>> getAllCategories() {
-        List<CategoryDto> categoryDtos = categoryService.getAllCategories();
+    public ResponseEntity<List<CategoryDto>> getAllCategories(
+            @RequestParam(value = "pageNumber", defaultValue = "0", required = false) int pageNumber,
+            @RequestParam(value = "pageSize", defaultValue = "10", required = false) int pageSize,
+            @RequestParam(value = "sortBy", defaultValue = "categoryId", required = false) String sortBy,
+            @RequestParam(value = "sortOrder", defaultValue = "asc", required = false) String sortOrder
+    ) {
+        List<CategoryDto> categoryDtos = categoryService.getAllCategories(pageNumber, pageSize, sortBy, sortOrder);
         logger.info("Categories found: {}", categoryDtos);
         return new ResponseEntity<>(categoryDtos, HttpStatus.OK);
     }
