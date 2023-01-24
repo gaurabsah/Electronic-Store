@@ -14,3 +14,4 @@ Technologies Used:
 6. Spring Core
 7. API Pagination
 8. API Sorting
+9. Bean Validation
