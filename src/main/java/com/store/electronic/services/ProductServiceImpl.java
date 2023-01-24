@@ -1,8 +1,6 @@
 package com.store.electronic.services;
 
-import com.store.electronic.dtos.CategoryDto;
 import com.store.electronic.dtos.ProductDto;
-import com.store.electronic.entities.Category;
 import com.store.electronic.entities.Product;
 import com.store.electronic.exceptions.ResourceNotFoundException;
 import com.store.electronic.repositories.ProductRepository;
