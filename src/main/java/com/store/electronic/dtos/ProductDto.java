@@ -27,12 +27,12 @@ public class ProductDto {
     @Size(min = 3, max = 1000, message = "Product description must be between 3 and 1000 characters")
     private String productDescription;
 
-//    @Size(message = "Product prize must be greater than 1", min = 1)
+    //    @Size(message = "Product prize must be greater than 1", min = 1)
     private double productPrice;
 
     private double discountedPrice;
 
-//    @Size(min = 3, max = 100, message = "Product Quantity must be between 3 and 100 characters")
+    //    @Size(min = 3, max = 100, message = "Product Quantity must be between 3 and 100 characters")
     @NotNull(message = "Product Quantity cannot be blank")
     private int productQuantity;
 
@@ -44,4 +44,8 @@ public class ProductDto {
 
     @NotNull(message = "Product stock cannot be blank")
     private boolean stock;
+
+    private String productImage;
+
+    private CategoryDto category;
 }

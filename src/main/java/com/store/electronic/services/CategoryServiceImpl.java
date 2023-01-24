@@ -8,12 +8,16 @@ import org.modelmapper.ModelMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
@@ -28,6 +32,9 @@ public class CategoryServiceImpl implements CategoryService {
 
     @Autowired
     private ModelMapper mapper;
+
+    @Value("${category.profile.image.path}")
+    private String imagePath;
 
     @Override
     public CategoryDto saveCategory(CategoryDto categoryDto) {
@@ -54,6 +61,15 @@ public class CategoryServiceImpl implements CategoryService {
     @Override
     public void deleteCategory(String categoryId) {
         Category category = categoryRepository.findById(categoryId).orElseThrow(() -> new ResourceNotFoundException("Category not found"));
+        String imageFullPath = imagePath + category.getCoverImage();
+        try {
+            Path path = Paths.get(imageFullPath);
+            Files.delete(path);
+            logger.info("File deleted: {}", imageFullPath);
+        } catch (Exception e) {
+            logger.info("No Such File Found");
+            e.printStackTrace();
+        }
         categoryRepository.delete(category);
         logger.info("Category deleted: {}", category);
     }
