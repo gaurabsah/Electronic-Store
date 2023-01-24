@@ -174,15 +174,4 @@ public class ProductServiceImpl implements ProductService {
         return productDtos;
     }
 
-//    @Override
-//    public List<ProductDto> getProductsByCategoryName(String categoryName, int pageNumber, int pageSize, String sortBy, String sortOrder) {
-//        Sort sort = (sortOrder.equalsIgnoreCase("desc")) ? (Sort.by(sortBy).descending()) : (Sort.by(sortBy).ascending());
-//        Pageable pageable = PageRequest.of(pageNumber, pageSize, sort);
-//        Category category = categoryRepository.findById(categoryId).orElseThrow(() -> new ResourceNotFoundException("Category not found"));
-//        Page<Product> page = productRepository.findByCategoryId(category, pageable);
-//        List<Product> products = page.getContent();
-//        List<ProductDto> productDtos = products.stream().map(product -> entityToDto(product)).collect(Collectors.toList());
-//        logger.info("Products found: {}", productDtos.size());
-//        return productDtos;
-//    }
 }
