@@ -1,0 +1,9 @@
+package com.store.electronic.repositories;
+
+import com.store.electronic.entities.CartItem;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface CartItemRepository extends JpaRepository<CartItem, Integer> {
+}
