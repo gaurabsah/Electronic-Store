@@ -1,10 +1,13 @@
 package com.store.electronic.dtos;
 
+import com.store.electronic.entities.Order;
 import lombok.*;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @Setter

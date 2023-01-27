@@ -1,93 +1,218 @@
-2023-01-25 13:37:01.544  INFO 3308 --- [restartedMain] c.s.e.ElectronicStoreApplication         : Starting ElectronicStoreApplication using Java 19.0.1 on inlen8520026405 with PID 3308 (C:\Users\GAURSAH\Durgesh Spring Boot\ElectronicStore\ElectronicStore\target\classes started by gaursah in C:\Users\GAURSAH\Durgesh Spring Boot\ElectronicStore\ElectronicStore)
-2023-01-25 13:37:01.552  INFO 3308 --- [restartedMain] c.s.e.ElectronicStoreApplication         : No active profile set, falling back to 1 default profile: "default"
-2023-01-25 13:37:01.600  INFO 3308 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2023-01-25 13:37:01.601  INFO 3308 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2023-01-25 13:37:02.287  INFO 3308 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-01-25 13:37:02.376  INFO 3308 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 79 ms. Found 5 JPA repository interfaces.
-2023-01-25 13:37:03.046  INFO 3308 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
-2023-01-25 13:37:03.057  INFO 3308 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-01-25 13:37:03.057  INFO 3308 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.70]
-2023-01-25 13:37:03.136  INFO 3308 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-01-25 13:37:03.136  INFO 3308 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1534 ms
-2023-01-25 13:37:03.277  INFO 3308 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-01-25 13:37:03.338  INFO 3308 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.14.Final
-2023-01-25 13:37:03.549  INFO 3308 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2023-01-25 13:37:03.676  INFO 3308 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-01-25 13:37:03.936  INFO 3308 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-01-25 13:37:03.957  INFO 3308 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
-2023-01-25 13:37:04.866  INFO 3308 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-01-25 13:37:04.873  INFO 3308 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-01-25 13:37:05.320  WARN 3308 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-01-25 13:37:05.711  INFO 3308 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2023-01-25 13:37:05.759  INFO 3308 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
-2023-01-25 13:37:05.772  INFO 3308 --- [restartedMain] c.s.e.ElectronicStoreApplication         : Started ElectronicStoreApplication in 4.586 seconds (JVM running for 5.499)
-2023-01-25 13:38:27.461  INFO 3308 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-01-25 13:38:27.461  INFO 3308 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2023-01-25 13:38:27.464  INFO 3308 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2023-01-25 13:38:27.669  INFO 3308 --- [http-nio-8081-exec-1] c.s.electronic.services.UserServiceImpl  : Users retrieved: [UserDto(userId=d1e894d8-c6e5-44f0-9def-cd464c85e43f, name=Keshav Chaudhary, email=keshav@gmail.com, password=keshav123, gender=MALE, about=I am Student, imageName=keshav.png)]
-2023-01-25 13:39:46.026  INFO 3308 --- [http-nio-8081-exec-4] c.s.e.services.ProductServiceImpl        : Products found: 6
-2023-01-25 13:39:46.027  INFO 3308 --- [http-nio-8081-exec-4] c.s.e.controllers.ProductController      : Get all products 6
-2023-01-25 13:40:32.359  INFO 3308 --- [http-nio-8081-exec-6] c.s.electronic.services.CartServiceImpl  : Cart updated f27b2550-4b27-4848-a925-a6c3d90e6a38
-2023-01-25 13:40:32.366  INFO 3308 --- [http-nio-8081-exec-6] c.s.e.controllers.CartController         : Item added to cart: f27b2550-4b27-4848-a925-a6c3d90e6a38
-2023-01-25 13:42:07.377  INFO 3308 --- [http-nio-8081-exec-9] c.s.electronic.services.CartServiceImpl  : Cart updated f27b2550-4b27-4848-a925-a6c3d90e6a38
-2023-01-25 13:42:07.378  INFO 3308 --- [http-nio-8081-exec-9] c.s.e.controllers.CartController         : Item added to cart: f27b2550-4b27-4848-a925-a6c3d90e6a38
-2023-01-25 13:42:42.985  INFO 3308 --- [http-nio-8081-exec-10] c.s.electronic.services.CartServiceImpl  : Cart updated f27b2550-4b27-4848-a925-a6c3d90e6a38
-2023-01-25 13:42:42.986  INFO 3308 --- [http-nio-8081-exec-10] c.s.e.controllers.CartController         : Item added to cart: f27b2550-4b27-4848-a925-a6c3d90e6a38
-2023-01-25 13:44:09.926  INFO 3308 --- [http-nio-8081-exec-3] c.s.electronic.services.CartServiceImpl  : fetching user d1e894d8-c6e5-44f0-9def-cd464c85e43f
-2023-01-25 13:44:09.931  INFO 3308 --- [http-nio-8081-exec-3] c.s.electronic.services.CartServiceImpl  : fetching cart f27b2550-4b27-4848-a925-a6c3d90e6a38
-2023-01-25 13:44:09.932  INFO 3308 --- [http-nio-8081-exec-3] c.s.electronic.services.CartServiceImpl  : fetching cart items [FAILED toString()]
-2023-01-25 13:44:09.984  INFO 3308 --- [http-nio-8081-exec-3] c.s.e.controllers.CartController         : Cart fetched for user: d1e894d8-c6e5-44f0-9def-cd464c85e43f
-2023-01-25 13:46:09.862  INFO 3308 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-01-25 13:46:09.884  INFO 3308 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2023-01-25 13:46:09.918  INFO 3308 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2023-01-25 13:46:16.551  INFO 23352 --- [restartedMain] c.s.e.ElectronicStoreApplication         : Starting ElectronicStoreApplication using Java 19.0.1 on inlen8520026405 with PID 23352 (C:\Users\GAURSAH\Durgesh Spring Boot\ElectronicStore\ElectronicStore\target\classes started by gaursah in C:\Users\GAURSAH\Durgesh Spring Boot\ElectronicStore\ElectronicStore)
-2023-01-25 13:46:16.552  INFO 23352 --- [restartedMain] c.s.e.ElectronicStoreApplication         : No active profile set, falling back to 1 default profile: "default"
-2023-01-25 13:46:16.600  INFO 23352 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2023-01-25 13:46:16.601  INFO 23352 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2023-01-25 13:46:17.256  INFO 23352 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-01-25 13:46:17.325  INFO 23352 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 61 ms. Found 5 JPA repository interfaces.
-2023-01-25 13:46:17.931  INFO 23352 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
-2023-01-25 13:46:17.942  INFO 23352 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-01-25 13:46:17.943  INFO 23352 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.70]
-2023-01-25 13:46:18.021  INFO 23352 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-01-25 13:46:18.021  INFO 23352 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1420 ms
-2023-01-25 13:46:18.147  INFO 23352 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-01-25 13:46:18.206  INFO 23352 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.14.Final
-2023-01-25 13:46:18.356  INFO 23352 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2023-01-25 13:46:18.463  INFO 23352 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-01-25 13:46:18.650  INFO 23352 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-01-25 13:46:18.667  INFO 23352 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
-2023-01-25 13:46:19.456  INFO 23352 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-01-25 13:46:19.463  INFO 23352 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-01-25 13:46:20.050  WARN 23352 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-01-25 13:46:20.400  INFO 23352 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2023-01-25 13:46:20.435  INFO 23352 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
-2023-01-25 13:46:20.445  INFO 23352 --- [restartedMain] c.s.e.ElectronicStoreApplication         : Started ElectronicStoreApplication in 4.275 seconds (JVM running for 4.769)
-2023-01-25 13:47:08.026  INFO 23352 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-01-25 13:47:08.026  INFO 23352 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2023-01-25 13:47:08.027  INFO 23352 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2023-01-25 13:47:08.095  INFO 23352 --- [http-nio-8081-exec-1] c.s.electronic.services.CartServiceImpl  : fetching user d1e894d8-c6e5-44f0-9def-cd464c85e43f
-2023-01-25 13:47:08.209  INFO 23352 --- [http-nio-8081-exec-1] c.s.electronic.services.CartServiceImpl  : fetching cart f27b2550-4b27-4848-a925-a6c3d90e6a38
-2023-01-25 13:47:08.210  INFO 23352 --- [http-nio-8081-exec-1] c.s.electronic.services.CartServiceImpl  : fetching cart items 
-2023-01-25 13:47:08.249  INFO 23352 --- [http-nio-8081-exec-1] c.s.e.controllers.CartController         : Cart fetched for user: d1e894d8-c6e5-44f0-9def-cd464c85e43f
-2023-01-25 13:48:10.716  WARN 23352 --- [http-nio-8081-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'int'; nested exception is java.lang.NumberFormatException: For input string: "dc3ae6d2-c91a-44d9-8978-58dc7df91e3e"]
-2023-01-25 13:49:27.348  INFO 23352 --- [http-nio-8081-exec-7] c.s.e.controllers.CartController         : Item removed from cart: 3
-2023-01-25 13:49:32.832  INFO 23352 --- [http-nio-8081-exec-8] c.s.electronic.services.CartServiceImpl  : fetching user d1e894d8-c6e5-44f0-9def-cd464c85e43f
-2023-01-25 13:49:32.841  INFO 23352 --- [http-nio-8081-exec-8] c.s.electronic.services.CartServiceImpl  : fetching cart f27b2550-4b27-4848-a925-a6c3d90e6a38
-2023-01-25 13:49:32.842  INFO 23352 --- [http-nio-8081-exec-8] c.s.electronic.services.CartServiceImpl  : fetching cart items 
-2023-01-25 13:49:32.844  INFO 23352 --- [http-nio-8081-exec-8] c.s.e.controllers.CartController         : Cart fetched for user: d1e894d8-c6e5-44f0-9def-cd464c85e43f
-2023-01-25 13:51:07.090  INFO 23352 --- [http-nio-8081-exec-2] c.s.electronic.services.CartServiceImpl  : fetching user d1e894d8-c6e5-44f0-9def-cd464c85e43f
-2023-01-25 13:51:07.094  INFO 23352 --- [http-nio-8081-exec-2] c.s.electronic.services.CartServiceImpl  : fetching cart f27b2550-4b27-4848-a925-a6c3d90e6a38
-2023-01-25 13:51:07.095  INFO 23352 --- [http-nio-8081-exec-2] c.s.electronic.services.CartServiceImpl  : Removing all items from cart
-2023-01-25 13:51:07.137  INFO 23352 --- [http-nio-8081-exec-2] c.s.e.controllers.CartController         : All Items removed from cart: d1e894d8-c6e5-44f0-9def-cd464c85e43f
-2023-01-25 13:51:17.724  INFO 23352 --- [http-nio-8081-exec-1] c.s.electronic.services.CartServiceImpl  : fetching user d1e894d8-c6e5-44f0-9def-cd464c85e43f
-2023-01-25 13:51:17.727  INFO 23352 --- [http-nio-8081-exec-1] c.s.electronic.services.CartServiceImpl  : fetching cart f27b2550-4b27-4848-a925-a6c3d90e6a38
-2023-01-25 13:51:17.728  INFO 23352 --- [http-nio-8081-exec-1] c.s.electronic.services.CartServiceImpl  : fetching cart items 
-2023-01-25 13:51:17.729  INFO 23352 --- [http-nio-8081-exec-1] c.s.e.controllers.CartController         : Cart fetched for user: d1e894d8-c6e5-44f0-9def-cd464c85e43f
-2023-01-25 13:52:13.625  INFO 23352 --- [http-nio-8081-exec-3] c.s.electronic.services.CartServiceImpl  : fetching user d1e894d8-c6e5-44f0-9def-cd464c85e43f
-2023-01-25 13:52:13.628  INFO 23352 --- [http-nio-8081-exec-3] c.s.electronic.services.CartServiceImpl  : fetching cart f27b2550-4b27-4848-a925-a6c3d90e6a38
-2023-01-25 13:52:13.629  INFO 23352 --- [http-nio-8081-exec-3] c.s.electronic.services.CartServiceImpl  : Removing all items from cart
-2023-01-25 13:52:13.630  INFO 23352 --- [http-nio-8081-exec-3] c.s.e.controllers.CartController         : All Items removed from cart: d1e894d8-c6e5-44f0-9def-cd464c85e43f
-2023-01-25 13:53:18.506  INFO 23352 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-01-25 13:53:18.521  INFO 23352 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2023-01-25 13:53:18.527  INFO 23352 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-01-27 10:43:26.180  INFO 27072 --- [restartedMain] c.s.e.ElectronicStoreApplication         : Starting ElectronicStoreApplication using Java 19.0.1 on inlen8520026405 with PID 27072 (C:\Users\GAURSAH\Durgesh Spring Boot\ElectronicStore\ElectronicStore\target\classes started by gaursah in C:\Users\GAURSAH\Durgesh Spring Boot\ElectronicStore\ElectronicStore)
+2023-01-27 10:43:26.191  INFO 27072 --- [restartedMain] c.s.e.ElectronicStoreApplication         : No active profile set, falling back to 1 default profile: "default"
+2023-01-27 10:43:26.270  INFO 27072 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-01-27 10:43:26.270  INFO 27072 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-01-27 10:43:27.082  INFO 27072 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-27 10:43:27.196  INFO 27072 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 103 ms. Found 7 JPA repository interfaces.
+2023-01-27 10:43:28.038  INFO 27072 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2023-01-27 10:43:28.051  INFO 27072 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-01-27 10:43:28.052  INFO 27072 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.70]
+2023-01-27 10:43:28.151  INFO 27072 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-01-27 10:43:28.151  INFO 27072 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1880 ms
+2023-01-27 10:43:28.327  INFO 27072 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-27 10:43:28.401  INFO 27072 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.14.Final
+2023-01-27 10:43:28.594  INFO 27072 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-01-27 10:43:28.726  INFO 27072 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-01-27 10:43:28.966  INFO 27072 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-01-27 10:43:28.990  INFO 27072 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-01-27 10:43:30.029  INFO 27072 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-27 10:43:30.036  INFO 27072 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-27 10:43:30.674  WARN 27072 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-01-27 10:43:31.061  INFO 27072 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-01-27 10:43:31.107  INFO 27072 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2023-01-27 10:43:31.118  INFO 27072 --- [restartedMain] c.s.e.ElectronicStoreApplication         : Started ElectronicStoreApplication in 5.424 seconds (JVM running for 6.093)
+2023-01-27 10:44:37.964  INFO 27072 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-01-27 10:44:37.965  INFO 27072 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-01-27 10:44:37.968  INFO 27072 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-01-27 10:44:38.373  INFO 27072 --- [http-nio-8081-exec-1] c.s.electronic.services.UserServiceImpl  : User created: UserDto(userId=c137c06b-f38b-4efd-8e55-8dabfe129e84, name=Gaurab Sah, email=gaurab.sah.777@gmail.com, password=gaurab123, gender=MALE, about=I am a Software Engineer at Capgemini, imageName=gaurab.png)
+2023-01-27 10:44:50.545  INFO 27072 --- [http-nio-8081-exec-3] c.s.electronic.services.UserServiceImpl  : Users retrieved: [UserDto(userId=c137c06b-f38b-4efd-8e55-8dabfe129e84, name=Gaurab Sah, email=gaurab.sah.777@gmail.com, password=gaurab123, gender=MALE, about=I am a Software Engineer at Capgemini, imageName=gaurab.png), UserDto(userId=d1e894d8-c6e5-44f0-9def-cd464c85e43f, name=Keshav Chaudhary, email=keshav@gmail.com, password=keshav123, gender=MALE, about=I am Student, imageName=keshav.png)]
+2023-01-27 10:45:18.362  INFO 27072 --- [http-nio-8081-exec-4] c.s.electronic.services.CartServiceImpl  : Cart updated 7f101fc0-c7fd-410e-bd7c-7b71faa60dc6
+2023-01-27 10:45:18.399  INFO 27072 --- [http-nio-8081-exec-4] c.s.e.controllers.CartController         : Item added to cart: 7f101fc0-c7fd-410e-bd7c-7b71faa60dc6
+2023-01-27 10:45:34.203  INFO 27072 --- [http-nio-8081-exec-5] c.s.e.services.ProductServiceImpl        : Products found: 6
+2023-01-27 10:45:34.203  INFO 27072 --- [http-nio-8081-exec-5] c.s.e.controllers.ProductController      : Get all products 6
+2023-01-27 10:45:55.900  INFO 27072 --- [http-nio-8081-exec-6] c.s.electronic.services.CartServiceImpl  : Cart updated 7f101fc0-c7fd-410e-bd7c-7b71faa60dc6
+2023-01-27 10:45:55.904  INFO 27072 --- [http-nio-8081-exec-6] c.s.e.controllers.CartController         : Item added to cart: 7f101fc0-c7fd-410e-bd7c-7b71faa60dc6
+2023-01-27 10:46:42.644  INFO 27072 --- [http-nio-8081-exec-7] c.s.electronic.services.CartServiceImpl  : Cart updated 7f101fc0-c7fd-410e-bd7c-7b71faa60dc6
+2023-01-27 10:46:42.649  INFO 27072 --- [http-nio-8081-exec-7] c.s.e.controllers.CartController         : Item added to cart: 7f101fc0-c7fd-410e-bd7c-7b71faa60dc6
+2023-01-27 10:47:59.901  INFO 27072 --- [http-nio-8081-exec-10] c.s.electronic.services.CartServiceImpl  : fetching user d1e894d8-c6e5-44f0-9def-cd464c85e43f
+2023-01-27 10:47:59.907  INFO 27072 --- [http-nio-8081-exec-10] c.s.electronic.services.CartServiceImpl  : fetching cart f27b2550-4b27-4848-a925-a6c3d90e6a38
+2023-01-27 10:47:59.908  INFO 27072 --- [http-nio-8081-exec-10] c.s.electronic.services.CartServiceImpl  : Removing all items from cart
+2023-01-27 10:47:59.910  INFO 27072 --- [http-nio-8081-exec-10] c.s.e.controllers.CartController         : All Items removed from cart: d1e894d8-c6e5-44f0-9def-cd464c85e43f
+2023-01-27 10:48:11.859  INFO 27072 --- [http-nio-8081-exec-2] c.s.electronic.services.UserServiceImpl  : Users retrieved: [UserDto(userId=c137c06b-f38b-4efd-8e55-8dabfe129e84, name=Gaurab Sah, email=gaurab.sah.777@gmail.com, password=gaurab123, gender=MALE, about=I am a Software Engineer at Capgemini, imageName=gaurab.png), UserDto(userId=d1e894d8-c6e5-44f0-9def-cd464c85e43f, name=Keshav Chaudhary, email=keshav@gmail.com, password=keshav123, gender=MALE, about=I am Student, imageName=keshav.png)]
+2023-01-27 10:48:33.630  INFO 27072 --- [http-nio-8081-exec-1] c.s.electronic.services.CartServiceImpl  : fetching user d1e894d8-c6e5-44f0-9def-cd464c85e43f
+2023-01-27 10:48:33.635  INFO 27072 --- [http-nio-8081-exec-1] c.s.electronic.services.CartServiceImpl  : fetching cart f27b2550-4b27-4848-a925-a6c3d90e6a38
+2023-01-27 10:48:33.635  INFO 27072 --- [http-nio-8081-exec-1] c.s.electronic.services.CartServiceImpl  : fetching cart items 
+2023-01-27 10:48:33.636  INFO 27072 --- [http-nio-8081-exec-1] c.s.e.controllers.CartController         : Cart fetched for user: d1e894d8-c6e5-44f0-9def-cd464c85e43f
+2023-01-27 10:50:31.743  INFO 27072 --- [http-nio-8081-exec-5] c.s.e.controllers.OrderController        : Order created: a8728ff0-1d66-4137-960a-00732d6f30d5
+2023-01-27 10:54:44.334  INFO 27072 --- [http-nio-8081-exec-8] c.s.electronic.services.CartServiceImpl  : fetching user c137c06b-f38b-4efd-8e55-8dabfe129e84
+2023-01-27 10:54:44.356  INFO 27072 --- [http-nio-8081-exec-8] c.s.electronic.services.CartServiceImpl  : fetching cart 7f101fc0-c7fd-410e-bd7c-7b71faa60dc6
+2023-01-27 10:54:44.357  INFO 27072 --- [http-nio-8081-exec-8] c.s.electronic.services.CartServiceImpl  : fetching cart items 
+2023-01-27 10:54:44.359  INFO 27072 --- [http-nio-8081-exec-8] c.s.e.controllers.CartController         : Cart fetched for user: c137c06b-f38b-4efd-8e55-8dabfe129e84
+2023-01-27 10:59:19.036  INFO 27072 --- [http-nio-8081-exec-10] c.s.e.services.OrderServiceImpl          : Found 2 orders
+2023-01-27 10:59:19.050  INFO 27072 --- [http-nio-8081-exec-10] c.s.e.controllers.OrderController        : No. of Orders: 2
+2023-01-27 11:00:02.080  INFO 27072 --- [http-nio-8081-exec-1] c.s.e.services.OrderServiceImpl          : Removing order 340baeac-a7ea-4309-8e29-1f3d7f2168d9
+2023-01-27 11:00:02.179  INFO 27072 --- [http-nio-8081-exec-1] c.s.e.controllers.OrderController        : Order successfully removed
+2023-01-27 11:00:08.536  INFO 27072 --- [http-nio-8081-exec-3] c.s.e.services.OrderServiceImpl          : Found 1 orders
+2023-01-27 11:00:08.537  INFO 27072 --- [http-nio-8081-exec-3] c.s.e.controllers.OrderController        : No. of Orders: 1
+2023-01-27 11:00:34.962  INFO 27072 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-01-27 11:00:35.058  INFO 27072 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-01-27 11:00:35.099  INFO 27072 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-01-27 11:00:41.972  INFO 2640 --- [restartedMain] c.s.e.ElectronicStoreApplication         : Starting ElectronicStoreApplication using Java 19.0.1 on inlen8520026405 with PID 2640 (C:\Users\GAURSAH\Durgesh Spring Boot\ElectronicStore\ElectronicStore\target\classes started by gaursah in C:\Users\GAURSAH\Durgesh Spring Boot\ElectronicStore\ElectronicStore)
+2023-01-27 11:00:41.974  INFO 2640 --- [restartedMain] c.s.e.ElectronicStoreApplication         : No active profile set, falling back to 1 default profile: "default"
+2023-01-27 11:00:42.037  INFO 2640 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-01-27 11:00:42.037  INFO 2640 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-01-27 11:00:42.932  INFO 2640 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-27 11:00:43.080  INFO 2640 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 135 ms. Found 7 JPA repository interfaces.
+2023-01-27 11:00:43.993  INFO 2640 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2023-01-27 11:00:44.020  INFO 2640 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-01-27 11:00:44.021  INFO 2640 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.70]
+2023-01-27 11:00:44.121  INFO 2640 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-01-27 11:00:44.122  INFO 2640 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2083 ms
+2023-01-27 11:00:44.303  INFO 2640 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-27 11:00:44.379  INFO 2640 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.14.Final
+2023-01-27 11:00:44.580  INFO 2640 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-01-27 11:00:44.717  INFO 2640 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-01-27 11:00:44.978  INFO 2640 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-01-27 11:00:45.001  INFO 2640 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-01-27 11:00:46.041  INFO 2640 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-27 11:00:46.054  INFO 2640 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-27 11:00:46.707  WARN 2640 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-01-27 11:00:47.072  INFO 2640 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-01-27 11:00:47.117  INFO 2640 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2023-01-27 11:00:47.129  INFO 2640 --- [restartedMain] c.s.e.ElectronicStoreApplication         : Started ElectronicStoreApplication in 5.652 seconds (JVM running for 6.345)
+2023-01-27 11:01:12.667  INFO 2640 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-01-27 11:01:12.667  INFO 2640 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-01-27 11:01:12.670  INFO 2640 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-01-27 11:01:13.102  INFO 2640 --- [http-nio-8081-exec-1] c.s.e.services.OrderServiceImpl          : Found 1 orders
+2023-01-27 11:01:13.102  INFO 2640 --- [http-nio-8081-exec-1] c.s.e.controllers.OrderController        : No. of Orders: 1
+2023-01-27 11:01:25.229  INFO 2640 --- [http-nio-8081-exec-3] c.s.e.services.OrderServiceImpl          : Removing order a8728ff0-1d66-4137-960a-00732d6f30d5
+2023-01-27 11:01:25.301  INFO 2640 --- [http-nio-8081-exec-3] c.s.e.controllers.OrderController        : Order successfully removed
+2023-01-27 11:01:30.516  INFO 2640 --- [http-nio-8081-exec-4] c.s.e.services.OrderServiceImpl          : Found 0 orders
+2023-01-27 11:01:30.516  INFO 2640 --- [http-nio-8081-exec-4] c.s.e.controllers.OrderController        : No. of Orders: 0
+2023-01-27 11:05:18.788  INFO 2640 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-01-27 11:05:18.828  INFO 2640 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-01-27 11:05:18.844  INFO 2640 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-01-27 11:18:34.514  INFO 6152 --- [restartedMain] c.s.e.ElectronicStoreApplication         : Starting ElectronicStoreApplication using Java 19.0.1 on inlen8520026405 with PID 6152 (C:\Users\GAURSAH\Durgesh Spring Boot\ElectronicStore\ElectronicStore\target\classes started by gaursah in C:\Users\GAURSAH\Durgesh Spring Boot\ElectronicStore\ElectronicStore)
+2023-01-27 11:18:34.517  INFO 6152 --- [restartedMain] c.s.e.ElectronicStoreApplication         : No active profile set, falling back to 1 default profile: "default"
+2023-01-27 11:18:34.572  INFO 6152 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-01-27 11:18:34.572  INFO 6152 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-01-27 11:18:35.386  INFO 6152 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-27 11:18:35.502  INFO 6152 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 105 ms. Found 7 JPA repository interfaces.
+2023-01-27 11:18:36.343  INFO 6152 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2023-01-27 11:18:36.361  INFO 6152 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-01-27 11:18:36.361  INFO 6152 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.70]
+2023-01-27 11:18:36.453  INFO 6152 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-01-27 11:18:36.455  INFO 6152 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1882 ms
+2023-01-27 11:18:36.626  INFO 6152 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-27 11:18:36.704  INFO 6152 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.14.Final
+2023-01-27 11:18:36.904  INFO 6152 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-01-27 11:18:37.034  INFO 6152 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-01-27 11:18:37.368  INFO 6152 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-01-27 11:18:37.389  INFO 6152 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-01-27 11:18:38.412  INFO 6152 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-27 11:18:38.420  INFO 6152 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-27 11:18:39.044  WARN 6152 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-01-27 11:18:39.423  INFO 6152 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-01-27 11:18:39.464  INFO 6152 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2023-01-27 11:18:39.477  INFO 6152 --- [restartedMain] c.s.e.ElectronicStoreApplication         : Started ElectronicStoreApplication in 5.446 seconds (JVM running for 6.051)
+2023-01-27 11:19:08.426  INFO 6152 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-01-27 11:19:08.427  INFO 6152 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-01-27 11:19:08.429  INFO 6152 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-01-27 11:19:08.971  INFO 6152 --- [http-nio-8081-exec-1] c.s.electronic.services.CartServiceImpl  : Cart updated 7f101fc0-c7fd-410e-bd7c-7b71faa60dc6
+2023-01-27 11:19:09.044  INFO 6152 --- [http-nio-8081-exec-1] c.s.e.controllers.CartController         : Item added to cart: 7f101fc0-c7fd-410e-bd7c-7b71faa60dc6
+2023-01-27 11:19:22.341  INFO 6152 --- [http-nio-8081-exec-3] c.s.e.services.ProductServiceImpl        : Products found: 6
+2023-01-27 11:19:22.342  INFO 6152 --- [http-nio-8081-exec-3] c.s.e.controllers.ProductController      : Get all products 6
+2023-01-27 11:19:41.527  INFO 6152 --- [http-nio-8081-exec-4] c.s.electronic.services.CartServiceImpl  : Cart updated 7f101fc0-c7fd-410e-bd7c-7b71faa60dc6
+2023-01-27 11:19:41.534  INFO 6152 --- [http-nio-8081-exec-4] c.s.e.controllers.CartController         : Item added to cart: 7f101fc0-c7fd-410e-bd7c-7b71faa60dc6
+2023-01-27 11:20:22.837  INFO 6152 --- [http-nio-8081-exec-5] c.s.e.controllers.OrderController        : Order created: b51035be-a059-4889-8059-822e4f30f0c3
+2023-01-27 11:20:54.361  INFO 6152 --- [http-nio-8081-exec-6] c.s.e.controllers.OrderController        : No. of Orders by user: 1
+2023-01-27 11:24:16.780  WARN 6152 --- [http-nio-8081-exec-8] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<com.store.electronic.dtos.OrderDto> com.store.electronic.controllers.OrderController.updateOrder(com.store.electronic.dtos.OrderDto,java.lang.String) with 3 errors: [Field error in object 'orderDto' on field 'billingName': rejected value [null]; codes [NotBlank.orderDto.billingName,NotBlank.billingName,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [orderDto.billingName,billingName]; arguments []; default message [billingName]]; default message [Billing Name cannot be blank]] [Field error in object 'orderDto' on field 'billingPhone': rejected value [null]; codes [NotBlank.orderDto.billingPhone,NotBlank.billingPhone,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [orderDto.billingPhone,billingPhone]; arguments []; default message [billingPhone]]; default message [Billing Phone cannot be blank]] [Field error in object 'orderDto' on field 'billingAddress': rejected value [null]; codes [NotBlank.orderDto.billingAddress,NotBlank.billingAddress,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [orderDto.billingAddress,billingAddress]; arguments []; default message [billingAddress]]; default message [Billing Address cannot be blank]] ]
+2023-01-27 11:26:14.232  INFO 6152 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-01-27 11:26:14.279  INFO 6152 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-01-27 11:26:14.299  INFO 6152 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-01-27 11:26:21.237  INFO 20500 --- [restartedMain] c.s.e.ElectronicStoreApplication         : Starting ElectronicStoreApplication using Java 19.0.1 on inlen8520026405 with PID 20500 (C:\Users\GAURSAH\Durgesh Spring Boot\ElectronicStore\ElectronicStore\target\classes started by gaursah in C:\Users\GAURSAH\Durgesh Spring Boot\ElectronicStore\ElectronicStore)
+2023-01-27 11:26:21.241  INFO 20500 --- [restartedMain] c.s.e.ElectronicStoreApplication         : No active profile set, falling back to 1 default profile: "default"
+2023-01-27 11:26:21.308  INFO 20500 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-01-27 11:26:21.308  INFO 20500 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-01-27 11:26:22.295  INFO 20500 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-27 11:26:22.409  INFO 20500 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 100 ms. Found 7 JPA repository interfaces.
+2023-01-27 11:26:23.341  INFO 20500 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2023-01-27 11:26:23.357  INFO 20500 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-01-27 11:26:23.358  INFO 20500 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.70]
+2023-01-27 11:26:23.457  INFO 20500 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-01-27 11:26:23.457  INFO 20500 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2147 ms
+2023-01-27 11:26:23.625  INFO 20500 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-27 11:26:23.702  INFO 20500 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.14.Final
+2023-01-27 11:26:23.923  INFO 20500 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-01-27 11:26:24.060  INFO 20500 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-01-27 11:26:24.315  INFO 20500 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-01-27 11:26:24.336  INFO 20500 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-01-27 11:26:25.333  INFO 20500 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-27 11:26:25.335  INFO 20500 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-27 11:26:25.974  WARN 20500 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-01-27 11:26:26.361  INFO 20500 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-01-27 11:26:26.402  INFO 20500 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2023-01-27 11:26:26.414  INFO 20500 --- [restartedMain] c.s.e.ElectronicStoreApplication         : Started ElectronicStoreApplication in 5.658 seconds (JVM running for 6.313)
+2023-01-27 11:27:16.431  INFO 20500 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-01-27 11:27:16.438  INFO 20500 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-01-27 11:27:16.447  INFO 20500 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-01-27 11:27:23.165  INFO 17740 --- [restartedMain] c.s.e.ElectronicStoreApplication         : Starting ElectronicStoreApplication using Java 19.0.1 on inlen8520026405 with PID 17740 (C:\Users\GAURSAH\Durgesh Spring Boot\ElectronicStore\ElectronicStore\target\classes started by gaursah in C:\Users\GAURSAH\Durgesh Spring Boot\ElectronicStore\ElectronicStore)
+2023-01-27 11:27:23.167  INFO 17740 --- [restartedMain] c.s.e.ElectronicStoreApplication         : No active profile set, falling back to 1 default profile: "default"
+2023-01-27 11:27:23.237  INFO 17740 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-01-27 11:27:23.238  INFO 17740 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-01-27 11:27:24.106  INFO 17740 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-27 11:27:24.217  INFO 17740 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 98 ms. Found 7 JPA repository interfaces.
+2023-01-27 11:27:24.997  INFO 17740 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2023-01-27 11:27:25.016  INFO 17740 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-01-27 11:27:25.017  INFO 17740 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.70]
+2023-01-27 11:27:25.125  INFO 17740 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-01-27 11:27:25.126  INFO 17740 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1888 ms
+2023-01-27 11:27:25.314  INFO 17740 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-27 11:27:25.386  INFO 17740 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.14.Final
+2023-01-27 11:27:25.589  INFO 17740 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-01-27 11:27:25.724  INFO 17740 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-01-27 11:27:25.970  INFO 17740 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-01-27 11:27:26.025  INFO 17740 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-01-27 11:27:27.006  INFO 17740 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-27 11:27:27.013  INFO 17740 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-27 11:27:27.617  WARN 17740 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-01-27 11:27:27.986  INFO 17740 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-01-27 11:27:28.027  INFO 17740 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2023-01-27 11:27:28.040  INFO 17740 --- [restartedMain] c.s.e.ElectronicStoreApplication         : Started ElectronicStoreApplication in 5.365 seconds (JVM running for 6.081)
+2023-01-27 11:27:38.656  INFO 17740 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-01-27 11:27:38.657  INFO 17740 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-01-27 11:27:38.659  INFO 17740 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-01-27 11:27:38.937  WARN 17740 --- [http-nio-8081-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<com.store.electronic.dtos.OrderDto> com.store.electronic.controllers.OrderController.updateOrder(com.store.electronic.dtos.OrderDto,java.lang.String) with 3 errors: [Field error in object 'orderDto' on field 'billingPhone': rejected value [null]; codes [NotBlank.orderDto.billingPhone,NotBlank.billingPhone,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [orderDto.billingPhone,billingPhone]; arguments []; default message [billingPhone]]; default message [Billing Phone cannot be blank]] [Field error in object 'orderDto' on field 'billingAddress': rejected value [null]; codes [NotBlank.orderDto.billingAddress,NotBlank.billingAddress,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [orderDto.billingAddress,billingAddress]; arguments []; default message [billingAddress]]; default message [Billing Address cannot be blank]] [Field error in object 'orderDto' on field 'billingName': rejected value [null]; codes [NotBlank.orderDto.billingName,NotBlank.billingName,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [orderDto.billingName,billingName]; arguments []; default message [billingName]]; default message [Billing Name cannot be blank]] ]
+2023-01-27 11:28:14.428  INFO 17740 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-01-27 11:28:14.436  INFO 17740 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-01-27 11:28:14.442  INFO 17740 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-01-27 11:28:20.413  INFO 12472 --- [restartedMain] c.s.e.ElectronicStoreApplication         : Starting ElectronicStoreApplication using Java 19.0.1 on inlen8520026405 with PID 12472 (C:\Users\GAURSAH\Durgesh Spring Boot\ElectronicStore\ElectronicStore\target\classes started by gaursah in C:\Users\GAURSAH\Durgesh Spring Boot\ElectronicStore\ElectronicStore)
+2023-01-27 11:28:20.414  INFO 12472 --- [restartedMain] c.s.e.ElectronicStoreApplication         : No active profile set, falling back to 1 default profile: "default"
+2023-01-27 11:28:20.476  INFO 12472 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-01-27 11:28:20.476  INFO 12472 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-01-27 11:28:21.342  INFO 12472 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-27 11:28:21.458  INFO 12472 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 105 ms. Found 7 JPA repository interfaces.
+2023-01-27 11:28:22.443  INFO 12472 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2023-01-27 11:28:22.458  INFO 12472 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-01-27 11:28:22.459  INFO 12472 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.70]
+2023-01-27 11:28:22.556  INFO 12472 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-01-27 11:28:22.557  INFO 12472 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2080 ms
+2023-01-27 11:28:22.748  INFO 12472 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-27 11:28:22.828  INFO 12472 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.14.Final
+2023-01-27 11:28:23.041  INFO 12472 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-01-27 11:28:23.172  INFO 12472 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-01-27 11:28:23.400  INFO 12472 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-01-27 11:28:23.422  INFO 12472 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-01-27 11:28:24.426  INFO 12472 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-27 11:28:24.434  INFO 12472 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-27 11:28:25.054  WARN 12472 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-01-27 11:28:25.455  INFO 12472 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-01-27 11:28:25.495  INFO 12472 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2023-01-27 11:28:25.509  INFO 12472 --- [restartedMain] c.s.e.ElectronicStoreApplication         : Started ElectronicStoreApplication in 5.556 seconds (JVM running for 6.176)
+2023-01-27 11:28:31.564  INFO 12472 --- [http-nio-8081-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-01-27 11:28:31.564  INFO 12472 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-01-27 11:28:31.566  INFO 12472 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-01-27 11:28:31.936  INFO 12472 --- [http-nio-8081-exec-2] c.s.e.controllers.OrderController        : Order updated: b51035be-a059-4889-8059-822e4f30f0c3
+2023-01-27 11:30:53.669  INFO 12472 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-01-27 11:30:53.676  INFO 12472 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-01-27 11:30:53.681  INFO 12472 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
