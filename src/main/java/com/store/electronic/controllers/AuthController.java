@@ -53,6 +53,7 @@ public class AuthController {
         JwtResponse response = JwtResponse.builder()
                 .jwtToken(token)
                 .user(userDto).build();
+        logger.info("Login successful for {}", request.getEmail());
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 

@@ -1,7 +1,9 @@
 package com.store.electronic;
 
 import com.store.electronic.entities.Role;
+import com.store.electronic.entities.User;
 import com.store.electronic.repositories.RoleRepository;
+import com.store.electronic.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
@@ -22,6 +24,9 @@ public class ElectronicStoreApplication implements CommandLineRunner {
     @Autowired
     private RoleRepository repository;
 
+    @Autowired
+    private UserRepository userRepository;
+
     @Value("${normal.role.id}")
     private String role_normal_id;
 
@@ -32,9 +37,10 @@ public class ElectronicStoreApplication implements CommandLineRunner {
     public void run(String... args) throws Exception {
 
         System.out.println(passwordEncoder.encode("saurav123"));
-        System.out.println(passwordEncoder.encode("gaurab123"));
-        System.out.println(passwordEncoder.encode("sunita123"));
-        System.out.println(passwordEncoder.encode("keshav123"));
+
+//        User user = User.builder().email("abc@dev.in").password(passwordEncoder.encode("abcd"))
+//                .name("abc").about("abc").gender("MALE").userId("abc1vaj").build();
+//        userRepository.save(user);
 
         try {
 

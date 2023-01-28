@@ -1,14 +1,11 @@
 package com.store.electronic.dtos;
 
-import com.store.electronic.entities.Order;
 import lombok.*;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 @Getter
@@ -21,7 +18,7 @@ public class UserDto {
 
     private String userId;
 
-    @Size(min = 3,max = 20,message = "Invalid Name")
+    @Size(min = 3, max = 20, message = "Invalid Name")
     @NotBlank(message = "Name is required")
     private String name;
 
@@ -33,7 +30,7 @@ public class UserDto {
     @NotBlank(message = "Password is required")
     private String password;
 
-    @Size(min = 4,max =6,message = "Invalid Gender")
+    @Size(min = 4, max = 6, message = "Invalid Gender")
     @NotBlank(message = "Gender is required")
     private String gender;
 

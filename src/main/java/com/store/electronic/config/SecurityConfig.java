@@ -20,23 +20,6 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @Configuration
 public class SecurityConfig {
 
-//    @Bean
-//    public UserDetailsService userDetailsService() {
-//        UserDetails admin = User.builder()
-//                .username("Gaurab")
-//                .password(passwordEncoder().encode("gaurab123"))
-//                .roles("ADMIN")
-//                .build();
-//
-//        UserDetails user = User.builder()
-//                .username("Keshav")
-//                .password(passwordEncoder().encode("keshav123"))
-//                .roles("USER")
-//                .build();
-//
-//        return new InMemoryUserDetailsManager(admin, user);
-//    }
-
     @Autowired
     private UserDetailsService userDetailsService;
 
@@ -55,22 +38,24 @@ public class SecurityConfig {
     }
 
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-//        Basic Auth
         http.csrf()
-                .disable()
-                .authorizeRequests()
-                .antMatchers("/*")
-                .permitAll()
-                .antMatchers(HttpMethod.POST, "/api/users/createUser")
-                .permitAll()
-                .anyRequest()
-                .authenticated()
                 .and()
+                .cors()
+                .disable()
                 .exceptionHandling()
                 .authenticationEntryPoint(authenticationEntryPoint)
                 .and()
                 .sessionManagement()
-                .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+                .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+                .and()
+                .authorizeRequests()
+                .antMatchers("/auth/login")
+                .permitAll()
+                .antMatchers(HttpMethod.POST, "/api/users/createUser")
+                .permitAll()
+                .anyRequest()
+                .authenticated();
+
 
         http.addFilterBefore(authenticationFilter, UsernamePasswordAuthenticationFilter.class);
         return http.build();
@@ -85,4 +70,5 @@ public class SecurityConfig {
     public AuthenticationManager authenticationManager(AuthenticationConfiguration builder) throws Exception {
         return builder.getAuthenticationManager();
     }
+
 }

@@ -19,6 +19,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+//this class checks if the request has a valid JWT token or not.
 @Component
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
