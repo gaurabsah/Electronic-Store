@@ -1,8 +1,10 @@
 package com.store.electronic.services;
 
 import com.store.electronic.dtos.UserDto;
+import com.store.electronic.entities.Role;
 import com.store.electronic.entities.User;
 import com.store.electronic.exceptions.ResourceNotFoundException;
+import com.store.electronic.repositories.RoleRepository;
 import com.store.electronic.repositories.UserRepository;
 import org.modelmapper.ModelMapper;
 import org.slf4j.Logger;
@@ -13,6 +15,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.nio.file.Files;
@@ -34,6 +37,15 @@ public class UserServiceImpl implements UserService {
     @Value("${user.profile.image.path}")
     private String imagePath;
 
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
+    @Value("${normal.role.id}")
+    private String normalRoleId;
+
+    @Autowired
+    private RoleRepository roleRepository;
+
     private final Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
 
     @Override
@@ -41,8 +53,13 @@ public class UserServiceImpl implements UserService {
 //        generate unique userId in string formate
         String userId = UUID.randomUUID().toString();
         userDto.setUserId(userId);
+        userDto.setPassword(passwordEncoder.encode(userDto.getPassword()));
 //        dto -> entity
         User user = dtoToEntity(userDto);
+
+//        fetch role and set it to users
+        Role role = roleRepository.findById(normalRoleId).get();
+        user.getRoles().add(role);
         User savedUser = userRepository.save(user);
 
 //        entity -> dto
@@ -57,7 +74,7 @@ public class UserServiceImpl implements UserService {
         User user = userRepository.findById(userId).orElseThrow(() -> new ResourceNotFoundException("User Not Found"));
         user.setName(userDto.getName());
         user.setEmail(userDto.getEmail());
-        user.setPassword(userDto.getPassword());
+        user.setPassword(passwordEncoder.encode(userDto.getPassword()));
         user.setAbout(userDto.getAbout());
         user.setGender(userDto.getGender());
         user.setImageName(userDto.getImageName());
