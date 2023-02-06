@@ -7,6 +7,8 @@ import com.store.electronic.services.CategoryService;
 import com.store.electronic.services.FileService;
 import com.store.electronic.services.ProductService;
 import com.store.electronic.utils.ImageResponse;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,12 +16,11 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.util.StreamUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.servlet.http.HttpServletResponse;
-import javax.validation.Valid;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
@@ -43,6 +44,7 @@ public class CategoryController {
     private ProductService productService;
 
     @PostMapping("/create")
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     public ResponseEntity<CategoryDto> createCategory(@Valid @RequestBody CategoryDto categoryDto) {
         CategoryDto newCategoryDto = categoryService.saveCategory(categoryDto);
         logger.info("Category created: {}", newCategoryDto);
@@ -50,6 +52,7 @@ public class CategoryController {
     }
 
     @PutMapping("/update/{categoryId}")
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     public ResponseEntity<CategoryDto> updateCategory(@Valid @RequestBody CategoryDto categoryDto, @PathVariable String categoryId) {
         CategoryDto updatedCategoryDto = categoryService.updateCategory(categoryDto, categoryId);
         logger.info("Category updated: {}", updatedCategoryDto);
@@ -57,6 +60,7 @@ public class CategoryController {
     }
 
     @DeleteMapping("/delete/{categoryId}")
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     public ResponseEntity<String> deleteCategory(@PathVariable String categoryId) {
         categoryService.deleteCategory(categoryId);
         logger.info("Category deleted, CategoryId: {}", categoryId);
@@ -64,6 +68,7 @@ public class CategoryController {
     }
 
     @GetMapping("/get/{categoryId}")
+    @PreAuthorize("hasAuthority('ROLE_USER') or hasAuthority('ROLE_ADMIN')")
     public ResponseEntity<CategoryDto> getCategory(@PathVariable String categoryId) {
         CategoryDto categoryDto = categoryService.getCategory(categoryId);
         logger.info("Category found: {}", categoryDto);
@@ -71,6 +76,7 @@ public class CategoryController {
     }
 
     @GetMapping("/getAll")
+    @PreAuthorize("hasAuthority('ROLE_USER') or hasAuthority('ROLE_ADMIN')")
     public ResponseEntity<List<CategoryDto>> getAllCategories(
             @RequestParam(value = "pageNumber", defaultValue = "0", required = false) int pageNumber,
             @RequestParam(value = "pageSize", defaultValue = "10", required = false) int pageSize,
@@ -83,6 +89,7 @@ public class CategoryController {
     }
 
     @PostMapping("/uploadCategoryImage/{categoryId}")
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     public ResponseEntity<ImageResponse> uploadUserImage(@RequestParam("categoryImage") MultipartFile image, @PathVariable String categoryId) throws IOException {
         String imageName = fileService.uploadFile(image, imageUploadPath);
 
@@ -101,6 +108,7 @@ public class CategoryController {
     }
 
     @GetMapping("/getCategoryImage/{categoryId}")
+    @PreAuthorize("hasAuthority('ROLE_USER') or hasAuthority('ROLE_ADMIN')")
     public void downloadUserImage(@PathVariable String categoryId, HttpServletResponse response) throws IOException {
         CategoryDto category = categoryService.getCategory(categoryId);
         logger.info("Category Image Name: {}", category.getCoverImage());
@@ -113,6 +121,7 @@ public class CategoryController {
 //    create product with category
 
     @PostMapping("/{categoryId}/createProduct")
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     public ResponseEntity<ProductDto> createProductWithCategory(@Valid @RequestBody ProductDto productDto, @PathVariable String categoryId) {
         ProductDto newProductDto = productService.createProductWithCategory(productDto, categoryId);
         logger.info("Product created: {}", newProductDto.getProductId());
@@ -122,12 +131,14 @@ public class CategoryController {
 //    update product with category
 
     @PutMapping("/{categoryId}/updateProduct/{productId}")
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     public ResponseEntity<ProductDto> updateProductWithCategory(@PathVariable String productId, @PathVariable String categoryId) {
         ProductDto updatedProductDto = productService.updateProductWithCategory(productId, categoryId);
         return new ResponseEntity<>(updatedProductDto, HttpStatus.OK);
     }
 
     @GetMapping("/{categoryID}/getProducts")
+    @PreAuthorize("hasAuthority('ROLE_USER') or hasAuthority('ROLE_ADMIN')")
     public ResponseEntity<List<ProductDto>> getProductsByCategory(
             @PathVariable String categoryID,
             @RequestParam(value = "pageNumber", defaultValue = "0", required = false) int pageNumber,

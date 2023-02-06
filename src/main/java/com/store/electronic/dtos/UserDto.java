@@ -2,11 +2,8 @@ package com.store.electronic.dtos;
 
 import lombok.*;
 
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
+import jakarta.validation.constraints.*;
 import java.util.HashSet;
-import java.util.Set;
 
 @Getter
 @Setter
@@ -39,5 +36,5 @@ public class UserDto {
 
     private String imageName;
 
-    private Set<RoleDto> roles = new HashSet<>();
+    private String role;
 }

@@ -2,9 +2,7 @@ package com.store.electronic.entities;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import jakarta.persistence.*;
 
 @Getter
 @Setter

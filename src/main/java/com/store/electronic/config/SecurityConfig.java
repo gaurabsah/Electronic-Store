@@ -1,15 +1,17 @@
 package com.store.electronic.config;
 
-import com.store.electronic.security.JwtAuthenticationEntryPoint;
-import com.store.electronic.security.JwtAuthenticationFilter;
+import com.store.electronic.security.JwtAuthFilter;
+import com.store.electronic.security.UserInfoUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -18,47 +20,43 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 @Configuration
+@EnableWebSecurity
+@EnableMethodSecurity
 public class SecurityConfig {
 
     @Autowired
-    private UserDetailsService userDetailsService;
-
-    @Autowired
-    private JwtAuthenticationEntryPoint authenticationEntryPoint;
-
-    @Autowired
-    private JwtAuthenticationFilter authenticationFilter;
+    private JwtAuthFilter authFilter;
 
     @Bean
-    public DaoAuthenticationProvider daoAuthenticationProvider() {
-        DaoAuthenticationProvider daoAuthenticationProvider = new DaoAuthenticationProvider();
-        daoAuthenticationProvider.setUserDetailsService(this.userDetailsService);
-        daoAuthenticationProvider.setPasswordEncoder(passwordEncoder());
-        return daoAuthenticationProvider;
+    public UserDetailsService userDetailsService() {
+        return new UserInfoUserDetailsService();
     }
 
+    @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http.csrf()
+        return http.csrf().disable()
+                .authorizeHttpRequests()
+                .requestMatchers("/auth/**").permitAll()
                 .and()
-                .cors()
-                .disable()
-                .exceptionHandling()
-                .authenticationEntryPoint(authenticationEntryPoint)
+                .authorizeHttpRequests().requestMatchers("/api/users/**")
+                .authenticated()
                 .and()
+                .authorizeHttpRequests().requestMatchers("/api/product/**")
+                .authenticated()
+                .and()
+                .authorizeHttpRequests().requestMatchers("/api/order/**")
+                .authenticated()
+                .and()
+                .authorizeHttpRequests().requestMatchers("/api/category/**")
+                .authenticated().and()
+                .authorizeHttpRequests().requestMatchers("/api/cart/**")
+                .authenticated().and()
                 .sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
-                .authorizeRequests()
-                .antMatchers("/auth/login")
-                .permitAll()
-                .antMatchers(HttpMethod.POST, "/api/users/createUser")
-                .permitAll()
-                .anyRequest()
-                .authenticated();
-
-
-        http.addFilterBefore(authenticationFilter, UsernamePasswordAuthenticationFilter.class);
-        return http.build();
+                .authenticationProvider(authenticationProvider())
+                .addFilterBefore(authFilter, UsernamePasswordAuthenticationFilter.class)
+                .build();
     }
 
     @Bean
@@ -67,8 +65,15 @@ public class SecurityConfig {
     }
 
     @Bean
-    public AuthenticationManager authenticationManager(AuthenticationConfiguration builder) throws Exception {
-        return builder.getAuthenticationManager();
+    public AuthenticationProvider authenticationProvider() {
+        DaoAuthenticationProvider authenticationProvider = new DaoAuthenticationProvider();
+        authenticationProvider.setUserDetailsService(userDetailsService());
+        authenticationProvider.setPasswordEncoder(passwordEncoder());
+        return authenticationProvider;
     }
 
+    @Bean
+    public AuthenticationManager authenticationManager(AuthenticationConfiguration config) throws Exception {
+        return config.getAuthenticationManager();
+    }
 }

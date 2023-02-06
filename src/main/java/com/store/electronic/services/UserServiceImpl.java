@@ -4,7 +4,6 @@ import com.store.electronic.dtos.UserDto;
 import com.store.electronic.entities.Role;
 import com.store.electronic.entities.User;
 import com.store.electronic.exceptions.ResourceNotFoundException;
-import com.store.electronic.repositories.RoleRepository;
 import com.store.electronic.repositories.UserRepository;
 import org.modelmapper.ModelMapper;
 import org.slf4j.Logger;
@@ -40,11 +39,6 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-    @Value("${normal.role.id}")
-    private String normalRoleId;
-
-    @Autowired
-    private RoleRepository roleRepository;
 
     private final Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
 
@@ -56,15 +50,11 @@ public class UserServiceImpl implements UserService {
         userDto.setPassword(passwordEncoder.encode(userDto.getPassword()));
 //        dto -> entity
         User user = dtoToEntity(userDto);
-
-//        fetch role and set it to users
-        Role role = roleRepository.findById(normalRoleId).get();
-        user.getRoles().add(role);
         User savedUser = userRepository.save(user);
 
 //        entity -> dto
         UserDto newUser = entityToDto(savedUser);
-        logger.info("User created: {}", newUser);
+        logger.info("User created");
         return newUser;
     }
 

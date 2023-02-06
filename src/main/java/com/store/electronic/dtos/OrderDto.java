@@ -2,7 +2,7 @@ package com.store.electronic.dtos;
 
 import lombok.*;
 
-import javax.validation.constraints.NotBlank;
+import jakarta.validation.constraints.*;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;

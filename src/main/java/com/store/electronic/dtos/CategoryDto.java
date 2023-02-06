@@ -1,9 +1,8 @@
 package com.store.electronic.dtos;
 
+import jakarta.validation.constraints.*;
 import lombok.*;
 
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
 
 @Getter
 @Setter

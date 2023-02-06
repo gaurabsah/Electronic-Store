@@ -4,6 +4,8 @@ import com.store.electronic.dtos.UserDto;
 import com.store.electronic.services.FileService;
 import com.store.electronic.services.UserService;
 import com.store.electronic.utils.ImageResponse;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,12 +13,11 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.util.StreamUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.servlet.http.HttpServletResponse;
-import javax.validation.Valid;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
@@ -36,26 +37,22 @@ public class UserController {
     @Value("${user.profile.image.path}")
     private String imageUploadPath;
 
-
-    @PostMapping("/createUser")
-    public ResponseEntity<UserDto> saveUser(@Valid @RequestBody UserDto userDto) {
-        UserDto user = userService.createUser(userDto);
-        return new ResponseEntity<>(user, HttpStatus.CREATED);
-    }
-
     @PutMapping("/update/{userId}")
+    @PreAuthorize("hasAuthority('ROLE_USER')")
     public ResponseEntity<UserDto> updateUser(@Valid @RequestBody UserDto userDto, @PathVariable String userId) {
         UserDto updatedUser = userService.updateUser(userDto, userId);
         return new ResponseEntity<>(updatedUser, HttpStatus.OK);
     }
 
     @DeleteMapping("/delete/{userId}")
+    @PreAuthorize("hasAuthority('ROLE_USER') or hasAuthority('ROLE_ADMIN')")
     public ResponseEntity<String> deleteUser(@PathVariable String userId) {
         userService.deleteUser(userId);
         return new ResponseEntity<>("User Deleted!!!", HttpStatus.OK);
     }
 
     @GetMapping("/allUsers")
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     public ResponseEntity<List<UserDto>> getAllUsers(
             @RequestParam(value = "pageNumber", defaultValue = "0", required = false) int pageNumber,
             @RequestParam(value = "pageSize", defaultValue = "10", required = false) int pageSize,
@@ -67,18 +64,21 @@ public class UserController {
     }
 
     @GetMapping("/{userId}")
+    @PreAuthorize("hasAuthority('ROLE_USER') or hasAuthority('ROLE_ADMIN')")
     public ResponseEntity<UserDto> getUser(@PathVariable String userId) {
         UserDto userById = userService.getUserById(userId);
         return new ResponseEntity<>(userById, HttpStatus.OK);
     }
 
     @GetMapping("/email/{email}")
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     public ResponseEntity<UserDto> getUserByEmail(@PathVariable String email) {
         UserDto userByEmail = userService.getUserByEmail(email);
         return new ResponseEntity<>(userByEmail, HttpStatus.OK);
     }
 
     @GetMapping("/search/{keyword}")
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     public ResponseEntity<List<UserDto>> searchUser(@PathVariable String keyword) {
         List<UserDto> userDtos = userService.searchUser(keyword);
         return new ResponseEntity<>(userDtos, HttpStatus.OK);
@@ -86,6 +86,7 @@ public class UserController {
 
     //    upload user image/profile picture
     @PostMapping("/uploadUserImage/{userId}")
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     public ResponseEntity<ImageResponse> uploadUserImage(@RequestParam("userImage") MultipartFile image, @PathVariable String userId) throws IOException {
         String imageName = fileService.uploadFile(image, imageUploadPath);
 
@@ -104,6 +105,7 @@ public class UserController {
     }
 
     @GetMapping("/getUserImage/{userId}")
+    @PreAuthorize("hasAuthority('ROLE_USER') or hasAuthority('ROLE_ADMIN')")
     public void downloadUserImage(@PathVariable String userId, HttpServletResponse response) throws IOException {
         UserDto user = userService.getUserById(userId);
         logger.info("User Image Name: {}", user.getImageName());

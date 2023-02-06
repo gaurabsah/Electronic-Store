@@ -2,16 +2,11 @@ package com.store.electronic.security;
 
 import lombok.*;
 
-@Getter
-@Setter
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
-@ToString
-public class JwtRequest {
+public class AuthRequest {
 
     private String email;
     private String password;
-
 }
-
